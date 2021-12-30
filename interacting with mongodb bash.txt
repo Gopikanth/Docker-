@@ -1,0 +1,67 @@
+
+C:\Users\God>docker ps --all
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS       NAMES
+095ae9614843   mongo         "docker-entrypoint.s…"   3 minutes ago       Up About a minute              27017/tcp   agitated_wozniak
+7286c3191ea3   busybox       "ls"                     About an hour ago   Exited (0) About an hour ago               jolly_franklin
+d2b5dc0b8a37   busybox       "sh"                     About an hour ago   Exited (0) About an hour ago               flamboyant_gauss
+a2df0e906768   hello-world   "/hello"                 2 hours ago         Exited (0) 2 hours ago                     lucid_pike
+7ad3d47ba228   hello-world   "/hello"                 4 hours ago         Exited (0) 4 hours ago                     beautiful_saha
+
+C:\Users\God>docker exec -it 095ae9614843 bash
+root@095ae9614843:/# ls
+bin   data  docker-entrypoint-initdb.d  home        lib    lib64   media  opt   root  sbin  sys  usr
+boot  dev   etc                         js-yaml.js  lib32  libx32  mnt    proc  run   srv   tmp  var
+root@095ae9614843:/# mongo
+MongoDB shell version v5.0.5
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("28dd2561-a22e-4227-9d61-5e558674a8dd") }
+MongoDB server version: 5.0.5
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+        https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+        https://community.mongodb.com
+---
+The server generated these startup warnings when booting:
+        2021-12-30T13:02:18.849+00:00: Using the XFS filesystem is strongly recommended with the WiredTiger storage engine. See http://dochub.mongodb.org/core/prodnotes-filesystem
+        2021-12-30T13:02:22.602+00:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+        2021-12-30T13:02:22.604+00:00: /sys/kernel/mm/transparent_hugepage/enabled is 'always'. We suggest setting it to 'never'
+---
+---
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+---
+> show dbs
+admin   0.000GB
+config  0.000GB
+local   0.000GB
+>
+bye
+root@095ae9614843:/# exit
+
+C:\Users\God>
+
+C:\Users\God>docker ps
+CONTAINER ID   IMAGE     COMMAND                  CREATED         STATUS         PORTS       NAMES
+095ae9614843   mongo     "docker-entrypoint.s…"   9 minutes ago   Up 7 minutes   27017/tcp   agitated_wozniak
+
+C:\Users\God>docker stop 095ae9614843
+095ae9614843
+
+C:\Users\God>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES

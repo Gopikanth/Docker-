@@ -1,0 +1,25 @@
+
+C:\Users\God>docker pull busybox
+Using default tag: latest
+latest: Pulling from library/busybox
+3cb635b06aa2: Pull complete 
+Digest: sha256:b5cfd4befc119a590ca1a81d6bb0fa1fb19f1fbebd0397f25fae164abe1e8a6a
+Status: Downloaded newer image for busybox:latest
+docker.io/library/busybox:latest
+
+C:\Users\God>docker run busybox
+
+C:\Users\God>docker run busybox ls
+bin
+dev
+etc
+home
+proc
+root
+sys
+tmp
+usr
+var
+
+C:\Users\God>
+

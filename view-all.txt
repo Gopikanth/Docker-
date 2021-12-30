@@ -1,0 +1,6 @@
+C:\Users\God>docker ps --all
+CONTAINER ID   IMAGE         COMMAND    CREATED          STATUS                      PORTS     NAMES
+7286c3191ea3   busybox       "ls"       33 minutes ago   Exited (0) 33 minutes ago             jolly_franklin
+d2b5dc0b8a37   busybox       "sh"       33 minutes ago   Exited (0) 33 minutes ago             flamboyant_gauss
+a2df0e906768   hello-world   "/hello"   47 minutes ago   Exited (0) 47 minutes ago             lucid_pike
+7ad3d47ba228   hello-world   "/hello"   3 hours ago      Exited (0) 3 hours ago                beautiful_saha
