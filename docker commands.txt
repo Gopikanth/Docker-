@@ -1,0 +1,171 @@
+C:\Users\God>docker pull centos
+Using default tag: latest
+latest: Pulling from library/centos
+a1d0c7532777: Pull complete
+Digest: sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
+Status: Downloaded newer image for centos:latest
+docker.io/library/centos:latest
+
+C:\Users\God>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\God>docker run -d centos sleep 20
+5056e835969612ba710420539ed60888a5d27e440f094cd7c0a4a9073dcae301
+
+C:\Users\God>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS       NAMES
+5056e8359696   centos        "sleep 20"               16 minutes ago   Exited (0) 15 minutes ago               competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              44 hours ago     Exited (2) 44 hours ago                 youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago       Exited (255) 2 days ago     27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago       Exited (255) 2 days ago     27017/tcp   agitated_wozniak
+7286c3191ea3   busybox       "ls"                     5 days ago       Exited (0) 5 days ago                   jolly_franklin
+d2b5dc0b8a37   busybox       "sh"                     5 days ago       Exited (0) 5 days ago                   flamboyant_gauss
+a2df0e906768   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                   lucid_pike
+7ad3d47ba228   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                   beautiful_saha
+
+C:\Users\God>docker run -d centos sleep 200
+494956f21d9ebc6401e770008eba9bc4d73148707206082a22fbef77f8eb558d
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                      PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              31 seconds ago   Up 29 seconds                           stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               22 minutes ago   Exited (0) 21 minutes ago               competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              44 hours ago     Exited (2) 44 hours ago                 youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago       Exited (255) 2 days ago     27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago       Exited (255) 2 days ago     27017/tcp   agitated_wozniak
+7286c3191ea3   busybox       "ls"                     6 days ago       Exited (0) 6 days ago                   jolly_franklin
+d2b5dc0b8a37   busybox       "sh"                     6 days ago       Exited (0) 6 days ago                   flamboyant_gauss
+a2df0e906768   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                   lucid_pike
+7ad3d47ba228   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                   beautiful_saha
+
+C:\Users\God>docker stop  stupefied
+Error response from daemon: No such container: stupefied
+
+C:\Users\God>docker stop  stupefied_proskuriakova
+stupefied_proskuriakova
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                        PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              2 minutes ago    Exited (137) 25 seconds ago               stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               23 minutes ago   Exited (0) 23 minutes ago                 competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              44 hours ago     Exited (2) 44 hours ago                   youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago       Exited (255) 2 days ago       27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago       Exited (255) 2 days ago       27017/tcp   agitated_wozniak
+7286c3191ea3   busybox       "ls"                     6 days ago       Exited (0) 6 days ago                     jolly_franklin
+d2b5dc0b8a37   busybox       "sh"                     6 days ago       Exited (0) 6 days ago                     flamboyant_gauss
+a2df0e906768   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                     lucid_pike
+7ad3d47ba228   hello-world   "/hello"                 6 days ago       Exited (0) 6 days ago                     beautiful_saha
+
+C:\Users\God>docker rm beautiful_saha
+beautiful_saha
+
+C:\Users\God>docker rm a2df0e906768
+a2df0e906768
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED          STATUS                       PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              8 minutes ago    Exited (137) 6 minutes ago               stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               29 minutes ago   Exited (0) 29 minutes ago                competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              44 hours ago     Exited (2) 44 hours ago                  youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago       Exited (255) 2 days ago      27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago       Exited (255) 2 days ago      27017/tcp   agitated_wozniak
+7286c3191ea3   busybox       "ls"                     6 days ago       Exited (0) 6 days ago                    jolly_franklin
+d2b5dc0b8a37   busybox       "sh"                     6 days ago       Exited (0) 6 days ago                    flamboyant_gauss
+
+C:\Users\God>docker rm 728 d2b5
+728
+d2b5
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              41 minutes ago      Exited (137) 39 minutes ago                stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               About an hour ago   Exited (0) About an hour ago               competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              45 hours ago        Exited (2) 45 hours ago                    youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago          Exited (255) 2 days ago        27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago          Exited (255) 2 days ago        27017/tcp   agitated_wozniak
+
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              41 minutes ago      Exited (137) 39 minutes ago                stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               About an hour ago   Exited (0) About an hour ago               competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              45 hours ago        Exited (2) 45 hours ago                    youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago          Exited (255) 2 days ago        27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago          Exited (255) 2 days ago        27017/tcp   agitated_wozniak
+
+C:\Users\God>docker images
+REPOSITORY    TAG       IMAGE ID       CREATED        SIZE
+mymongo_img   latest    f9f60dc569a4   45 hours ago   355MB
+<none>        <none>    c0b36897d7a9   45 hours ago   355MB
+mymongo       latest    888726eee5d2   46 hours ago   355MB
+mymongoimg    latest    888726eee5d2   46 hours ago   355MB
+mymomgo_img   latest    11e1f39e84aa   46 hours ago   355MB
+<none>        <none>    76dc71c5b4d9   47 hours ago   19MB
+mongo         latest    dfda7a2cf273   4 weeks ago    693MB
+busybox       latest    ffe9d497c324   4 weeks ago    1.24MB
+hello-world   latest    feb5d9fea6a5   3 months ago   13.3kB
+centos        latest    5d0da3dc9764   3 months ago   231MB
+
+C:\Users\God>docker rmi hello-world
+Untagged: hello-world:latest
+Untagged: hello-world@sha256:2498fce14358aa50ead0cc6c19990fc6ff866ce72aeb5546e1d59caac3d0d60f
+Deleted: sha256:feb5d9fea6a5e9606aa995e879d862b825965ba48de054caab5ef356dc6b3412
+Deleted: sha256:e07ee1baac5fae6a26f30cabfe54a36d3402f96afda318fe0a96cec4ca393359
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                         PORTS       NAMES
+494956f21d9e   centos        "sleep 200"              48 minutes ago      Exited (137) 47 minutes ago                stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               About an hour ago   Exited (0) About an hour ago               competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              45 hours ago        Exited (2) 45 hours ago                    youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago          Exited (255) 2 days ago        27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago          Exited (255) 2 days ago        27017/tcp   agitated_wozniak
+
+C:\Users\God>docker run centos
+
+C:\Users\God>docker rmi centos
+Error response from daemon: conflict: unable to remove repository reference "centos" (must force) - container 34f0e0fb7620 is using its referenced image 5d0da3dc9764
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED             STATUS                           PORTS       NAMES
+34f0e0fb7620   centos        "/bin/bash"              12 minutes ago      Exited (0) 12 minutes ago                    determined_mclean
+494956f21d9e   centos        "sleep 200"              About an hour ago   Exited (137) About an hour ago               stupefied_proskuriakova
+5056e8359696   centos        "sleep 20"               About an hour ago   Exited (0) About an hour ago                 competent_hopper
+4b9bd7608a6a   mymongo_img   "/app/main"              45 hours ago        Exited (2) 45 hours ago                      youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago          Exited (255) 2 days ago          27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago          Exited (255) 2 days ago          27017/tcp   agitated_wozniak
+
+C:\Users\God>docker rm 34
+34
+
+C:\Users\God>docker rm 49 50
+49
+50
+
+C:\Users\God>docker rmi centos
+Untagged: centos:latest
+Untagged: centos@sha256:a27fd8080b517143cbbbab9dfb7c8571c40d67d534bbdee55bd6c473f432b177
+Deleted: sha256:5d0da3dc976460b72c77d94c8a1ad043720b0416bfc16c52c45d4847e53fadb6
+Deleted: sha256:74ddd0ec08fa43d09f32636ba91a0a3053b02cb4627c35051aff89f853606b59
+
+C:\Users\God>docker ps -a
+CONTAINER ID   IMAGE         COMMAND                  CREATED        STATUS                    PORTS       NAMES
+4b9bd7608a6a   mymongo_img   "/app/main"              45 hours ago   Exited (2) 45 hours ago               youthful_germain
+7bb071992054   mongo         "docker-entrypoint.s…"   2 days ago     Exited (255) 2 days ago   27017/tcp   jovial_hertz
+095ae9614843   mongo         "docker-entrypoint.s…"   5 days ago     Exited (255) 2 days ago   27017/tcp   agitated_wozniak
+
+
+
+
+
+
+
+
+
+
+
+
+
+
