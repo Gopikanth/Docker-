@@ -1,0 +1,26 @@
+C:\Users\God>docker run ubuntu cat /proc/version
+Linux version 5.10.60.1-microsoft-standard-WSL2 (oe-user@oe-host) (x86_64-msft-linux-gcc (GCC) 9.3.0, GNU ld (GNU Binutils) 2.34.0.20200220) #1 SMP Wed Aug 25 23:20:18 UTC 2021
+
+C:\Users\God>docker run ubuntu:17.10 cat /proc/version
+Linux version 5.10.60.1-microsoft-standard-WSL2 (oe-user@oe-host) (x86_64-msft-linux-gcc (GCC) 9.3.0, GNU ld (GNU Binutils) 2.34.0.20200220) #1 SMP Wed Aug 25 23:20:18 UTC 2021
+
+//note:we can't do anything for 20 sec
+C:\Users\God>docker run ubuntu sleep 20
+
+//running in detached mode-we can run the prompt normally
+C:\Users\God>docker run -d ubuntu sleep 20
+
+//running in attached mode 
+C:\Users\God>docker attach fa3r
+
+//note -we are running jerkins to inspect the port following command is used
+C:\Users\God>docker inspect w23d
+
+//the above used port run only on that port to customize the port we use port mapping
+C:\Users\God>docker run -p 8080:8080 jerkins
+
+//jerkins volume
+C:\Users\God>docker run -p 8080:8080 jerkins-v /root/my-jerkins-data:/var/jerkins_home-u root jerkins
+
+
+
