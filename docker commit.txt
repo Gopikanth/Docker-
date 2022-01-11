@@ -1,0 +1,31 @@
+C:\Users\God>docker run -it alpine sh
+/ # apk add --update redis
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz
+fetch https://dl-cdn.alpinelinux.org/alpine/v3.15/community/x86_64/APKINDEX.tar.gz
+(1/1) Installing redis (6.2.6-r0)
+Executing redis-6.2.6-r0.pre-install
+Executing redis-6.2.6-r0.post-install
+Executing busybox-1.34.1-r3.trigger
+OK: 8 MiB in 15 packages
+C:\Users\God>docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED          STATUS          PORTS     NAMES
+26ebd140c469   alpine    "sh"      54 minutes ago   Up 54 minutes             stoic_rhodes
+
+C:\Users\God>docker commit 26ebd1 alpine-redis
+sha256:e833bdaca5c61b2759cef3eeef7e52e62c740a63bf0a8b4437984281c06bb51f
+
+C:\Users\God>docker images
+REPOSITORY     TAG       IMAGE ID       CREATED          SIZE
+alpine-redis   latest    e833bdaca5c6   24 seconds ago   10.3MB
+ubuntu         latest    d13c942271d6   4 days ago       72.8MB
+mymongo_img    latest    f9f60dc569a4   7 days ago       355MB
+<none>         <none>    c0b36897d7a9   7 days ago       355MB
+mymongo        latest    888726eee5d2   7 days ago       355MB
+mymongoimg     latest    888726eee5d2   7 days ago       355MB
+mymomgo_img    latest    11e1f39e84aa   7 days ago       355MB
+<none>         <none>    76dc71c5b4d9   7 days ago       19MB
+mongo          latest    dfda7a2cf273   4 weeks ago      693MB
+busybox        latest    ffe9d497c324   4 weeks ago      1.24MB
+alpine         latest    c059bfaa849c   6 weeks ago      5.59MB
+ubuntu         <none>    ba6acccedd29   2 months ago     72.8MB
+ubuntu         17.10     e211a66937c6   3 years ago      100MB
