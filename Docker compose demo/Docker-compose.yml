@@ -1,0 +1,8 @@
+version: "3.9" 
+services:
+   web:
+       build: .
+       ports:
+           - "8080:8080"
+       environment:
+           MONGODB_URI: "mongodb+srv://Gopikanth123:Gopikanth@cluster0.1awun.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
